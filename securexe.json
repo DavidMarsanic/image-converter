@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "id": "nativewebp",
+      "name": "nativewebp (engine package)",
+      "version": "v1.3.0",
+      "homepage": "https://github.com/HugoSmits86/nativewebp",
+      "note": "Compiled directly into this binary — pure-Go, no cgo, so it fits the CGO_ENABLED=0 cross-compile this family of apps requires. Writes lossless WebP only; there's no pure-Go lossy WebP encoder without cgo. Not a separate install; listed for transparency about what this app is built on."
+    },
+    {
+      "id": "golang.org/x/image",
+      "name": "golang.org/x/image (bmp, tiff, webp, draw)",
+      "version": "v0.24.0",
+      "homepage": "https://pkg.go.dev/golang.org/x/image",
+      "note": "Compiled directly into this binary — decodes BMP/TIFF/WebP and does the quality resize. Not a separate install."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "chromium-browser",
+      "name": "Chrome or Chromium-based browser",
+      "homepage": "https://www.google.com/chrome/",
+      "note": "Any Chromium-based browser works: Google Chrome, Chromium, Brave, Microsoft Edge, or Arc. Used to render the app's own UI window, same as the rest of this family of apps.",
+      "install": {
+        "macos": "brew install --cask google-chrome"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Converter</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="app">
+
+  <div id="dropZone" class="drop-zone">
+    <p class="drop-title">Drop images here</p>
+    <p class="drop-sub">or click to choose — JPEG, PNG, WebP, GIF, BMP, TIFF. Nothing is uploaded anywhere; this all happens on your machine.</p>
+    <input id="fileInput" type="file" accept="image/*" multiple hidden>
+  </div>
+
+  <div id="error" class="error hidden"></div>
+
+  <section id="workspace" class="workspace hidden">
+    <div class="workspace-header">
+      <span id="imageCount" class="image-count"></span>
+      <button id="startOver" class="link-btn" type="button">Start over</button>
+    </div>
+
+    <div class="options-bar">
+      <label class="option">
+        <span class="option-label">Convert to</span>
+        <select id="formatSelect">
+          <option value="jpeg">JPEG</option>
+          <option value="png">PNG</option>
+          <option value="webp">WebP</option>
+          <option value="gif">GIF</option>
+          <option value="bmp">BMP</option>
+          <option value="tiff">TIFF</option>
+        </select>
+      </label>
+
+      <label id="qualityOption" class="option">
+        <span class="option-label">Quality <span id="qualityValue">85</span></span>
+        <input id="qualityRange" type="range" min="1" max="100" value="85">
+      </label>
+
+      <label class="option">
+        <span class="option-label">Max size</span>
+        <select id="maxDimension">
+          <option value="0">Original</option>
+          <option value="3840">3840px</option>
+          <option value="1920">1920px</option>
+          <option value="1280">1280px</option>
+          <option value="800">800px</option>
+        </select>
+      </label>
+
+      <div class="option">
+        <span class="option-label">Save to</span>
+        <button id="outputFolderBtn" class="btn" type="button">Downloads</button>
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <button id="convertBtn" class="btn primary" type="button">Convert</button>
+      <span id="convertStatus" class="convert-status"></span>
+    </div>
+
+    <div id="imageGrid" class="image-grid"></div>
+  </section>
+
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
